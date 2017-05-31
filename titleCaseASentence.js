@@ -1,5 +1,5 @@
 function titleCase(str) {
-  var expression = /\w+/g;
+  var expression = /\w+[']\w+|\w+/g;
   var capitalStr = str.match(expression);
   var newArr = [];
   for (var i = 0; i < capitalStr.length; i++) {
@@ -9,4 +9,4 @@ function titleCase(str) {
   return upperCase;
 };
 
-console.log(titleCase("sHoRt AnD sToUt"));
+console.log(titleCase("I'm a little teapot"));
