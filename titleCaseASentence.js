@@ -5,8 +5,8 @@ function titleCase(str) {
   for (var i = 0; i < capitalStr.length; i++) {
     newArr.push(capitalStr[i][0].toUpperCase() + capitalStr[i].slice(1).toLowerCase());
   };
-  newArr.join(" ");
-  return newArr;
+  var upperCase = newArr.join(" ");
+  return upperCase;
 };
 
-console.log(titleCase("little tea pot"));
+console.log(titleCase("sHoRt AnD sToUt"));
