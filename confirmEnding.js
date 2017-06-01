@@ -1,13 +1,13 @@
-function confirmEnding(str, target) {
-  // "Never give up and good luck will find you."
-  // -- Falcor
-  str = str.toLowerCase();
-  tgtStr = str.substr((str.length - target.length), target.length);
-  if (tgtStr === target) {
-    return true;
-  } else {
-    return false;
-  };
+
+function repeatStringNumTimes(str, num) {
+  // repeat after me
+  var arr = [];
+  var i = 0;
+  while (i < (num)) {
+    arr.push(str);
+    i++;
+  }
+  return arr.join("");
 }
 
-console.log(confirmEnding("Bastian", "n"));
+console.log(repeatStringNumTimes("abc", 3));
