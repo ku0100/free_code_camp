@@ -19,7 +19,6 @@ function rot13(str) { // LBH QVQ VG!
   }
   newStr = newStr.join('');
   return newStr;
-  // return str.charCodeAt(4);
 }
 
 // Change the inputs below to test
