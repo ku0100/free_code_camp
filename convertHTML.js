@@ -6,23 +6,15 @@ function convertHTML(str) {
                         ">": "&gt;",
                         "\"": "&quot;",
                         "'": "&apos;"};
-    var symbols = str.match(re);
-    var newStr = str;
-    if (symbols !== null) {
-        for (var key in htmlEntities) {
-            for (var i = 0; i < symbols.length; i++) {
-                if (symbols[i] === key) {
-                    newStr = str.replace(re, htmlEntities[key]);
-                    // return newStr;
-                } else {
-                    newStr = newStr;
-                }
+    var newStr = str.split("");
+    for (var i = 0; i < newStr.length; i++) {
+        for (key in htmlEntities) {
+            if (newStr[i] === key) {
+                newStr[i] = htmlEntities[key];
             }
-            // return newStr;
         }
     }
-    return newStr;
+    return newStr.join("");
 };
 
-
-console.log(convertHTML("abc"));
+console.log(convertHTML("<>"));
