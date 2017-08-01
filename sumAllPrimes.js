@@ -1,29 +1,26 @@
 function sumPrimes(num) {
-    var total = [];
-    var primeSum = 0;
-    for (var i = 1; i < (num + 1); i++) {
-        total.push(i);
+    var primeTotal = 0;
+    var p = 2;
+    var primeArr = []; // initialize prime arr
+    
+    function isPrime(x) {
+        for (p = 2; p < x; p++) {
+            if (x % p === 0) {
+                return false;
+            }
+        }
+        return true;
     }
-
-    for (var j = 0; j < total.length; j++) {
-        if (total[j] > 7) {
-            if (total[j] % 2 === 0) {
-            } else if (total[j] % 3 === 0) {
-            } else if (total[j] % 5 === 0) {
-            } else if (total[j] % 7 === 0) {
-            } else {
-                primeSum += total[j];
-            }
-        } else if (total[j] > 2) {
-            if (total[j] % 2 === 0) {
-            } else {
-                primeSum += total[j];
-            }
-        } else {
-            primeSum += total[j];
+    for (var i = 2; i <= num; i++) {
+        if (isPrime(i)) {
+            primeArr.push(i);
         }
     }
-    return primeSum - 1;
+
+    for (var j = 0; j < primeArr.length; j++) {
+        primeTotal = primeTotal + primeArr[j];
+    }
+    return primeTotal;
 }
 
-console.log(sumPrimes(10));
+console.log(sumPrimes(977));
