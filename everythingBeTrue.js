@@ -3,7 +3,9 @@ function truthCheck(collection, pre) {
     var falsy = [false, 0, "", null, undefined, NaN];
     for (var i = 0; i < collection.length; i++) {
         if (collection[i].hasOwnProperty(pre)) {
-            if(falsy.indexOf(collection[i][pre]) === -1) {
+            if (Object.is(collection[i][pre], NaN)) {
+                return false;
+            } else if (falsy.indexOf(collection[i][pre]) === -1) {
             } else {
                 return false;
             }
